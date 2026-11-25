@@ -1,233 +1,42 @@
 ---
 title: "Active spiralling of microtubules driven by kinesin motors"
-description: "Novel spiral motion patterns in kinesin-driven microtubules and their implications for cellular organization"
+description: "A pinned microtubule pushed by kinesin curls into a rotating spiral. With the motors modelled explicitly, spirals start by local buckling and their radius scales with motor density to the power of about minus 1/4."
 contributors: "douglas-nganga,sam-macharia,henry-hess,takahiro-nitta"
-tags: ["molecular-motors", "microtubules", "kinesin", "spiral-motion", "cytoskeleton"]
-excerpt: "Investigation of novel spiral motion patterns in kinesin-driven microtubules reveals new insights into how molecular motors induce complex three-dimensional motion patterns in cytoskeletal filaments."
 pubDate: 2025-08-31
+tags: ["molecular-motors", "microtubules", "kinesin", "active-matter", "spiral-motion"]
+excerpt: "When the mechanics of the kinesin motors are included in the model, spiral size depends on motor density in a way earlier models did not predict."
 citation:
   journal: "Scientific Reports"
   year: 2025
   doi: "10.1038/s41598-025-03384-y"
+  authors: ["Douglas Kagoiya Ng'ang'a", "Samuel Macharia Kang'iri", "Henry Hess", "Takahiro Nitta"]
 ---
 
-import BiomolecularMachinesComments from '../../../../components/biomolecular-machines/BiomolecularMachinesComments.astro';
-import TawkWidget from '../../../../components/TawkWidget.astro';
-import UniversalContentContributors from '../../../../components/UniversalContentContributors.astro';
-import InArticleAd from '../../../../components/InArticleAd.astro';
-import Copyright from '../../../../components/Copyright.astro';
-import BionicText from '../../../../components/BionicText.astro';
-import TailwindWrapper from '../../../../components/TailwindWrapper.jsx';
-import { Tabs, TabItem } from '@astrojs/starlight/components';
-import { Card, CardGrid, Badge, Steps, LinkButton, FileTree } from '@astrojs/starlight/components';
+Engineers who build molecular shuttles, tiny transport systems in which surface-bound motor proteins push filaments, need models that predict how the filaments will move. Filaments pushed this way are active polymers, a kind of active matter. When their motion is constrained, they form patterns that a filament at rest never would. A microtubule or actin filament pinned at its leading end, for example, curls into a rotating spiral. The shape of that spiral is set by the balance between the motor forces and the stiffness of the filament.
 
-<UniversalContentContributors 
-  contributors={frontmatter.contributors}
-/>
+Earlier theory and simulations modelled the motors implicitly, without mechanics of their own. If the motors themselves deform, those models could predict the wrong spiral.
 
+## What we did
 
+We simulated microtubules pushed by kinesin motors in an overdamped dynamics framework, in which friction dominates and inertia can be neglected. Beyond the mechanics of the spiralling microtubule itself, the model explicitly includes the mechanics of each kinesin motor. We pinned the leading end of the microtubule and followed how and when a spiral formed, across a range of conditions, including the density of motors on the surface.
 
-## Research Objectives
+## What we found
 
-This study investigates the fascinating phenomenon of active spiralling in microtubules driven by kinesin motors, revealing new mechanisms of cytoskeletal organization and transport dynamics.
+- Spiral formation starts with localized buckling of the microtubule near its pinned end.
+- The conditions under which spirals form are summarized in a phase diagram.
+- The radius of the spirals scales with the surface motor density with an exponent of about minus 1/4. More motors give tighter spirals.
+- This exponent differs from that found in earlier theoretical and simulation studies, which modelled the motors implicitly.
+- The difference can be understood as the contribution of the kinesin motors to the total elastic deformation energy of the system.
 
-<BionicText method="advanced" intensity="medium" class="highlight">
-The research demonstrates how kinesin motor proteins can induce complex three-dimensional spiral motion patterns in microtubules, providing new insights into cellular organization and intracellular transport mechanisms.
-</BionicText>
+## Why it matters
 
-## Publication Details
+The mechanics of the motors are not a detail that a model can leave out. They change how the active polymer behaves, including a measurable quantity such as the spiral radius. For researchers modelling active polymers, this means the motors should be represented explicitly. For designers of devices built on active polymers, such as molecular shuttles driven by motor proteins, it gives a more accurate basis for predicting filament behaviour on a motor-coated surface.
 
-<InArticleAd />
+## Limits
 
+This summary is written from the published abstract. The results come from simulation. The abstract reports the scaling exponent as approximate and does not give the range of motor densities, the phase boundaries in numbers, or a direct comparison with experiments.
 
-<Card title="Publication Information">
+## Read the paper
 
-**Journal**: Scientific Reports  
-**Year**: 2025  
-**DOI**: [10.1038/s41598-025-03384-y](https://doi.org/10.1038/s41598-025-03384-y)  
-**Publisher**: Nature Publishing Group  
-**Type**: Original Research Article
-
-</Card>
-
-## Research Summary
-
-<InArticleAd />
-
-
-<Tabs>
-  <TabItem label="Key Findings">
-    ### Major Discoveries
-    
-    - **Novel Spiral Patterns**: Kinesin motors can induce distinctive spiralling motion in microtubules under specific conditions
-    - **Motor Density Effects**: The spiralling behavior is directly related to motor protein density on the substrate surface
-    - **Three-Dimensional Motion**: Microtubules exhibit complex 3D trajectories that deviate from simple linear gliding
-    - **Cellular Implications**: These spiral patterns may play important roles in cellular organization and transport efficiency
-    
-    ### Significance
-    
-    This research opens new avenues for understanding how molecular motors contribute to the spatial organization of the cytoskeleton and cellular transport networks.
-  </TabItem>
-
-  <TabItem label="Methodology">
-    ### Experimental Approach
-    
-    **Microtubule Gliding Assays**:
-    - Kinesin motors immobilized on glass surfaces
-    - Fluorescently labeled microtubules tracked using microscopy
-    - Quantitative analysis of trajectory patterns
-    
-    **Computational Analysis**:
-    - Mathematical modeling of motor-filament interactions
-    - Statistical analysis of spiral motion parameters
-    - Correlation analysis between motor density and spiralling behavior
-    
-    **Controls and Variables**:
-    - Multiple motor concentrations tested
-    - Different ATP concentrations evaluated
-    - Systematic variation of experimental conditions
-  </TabItem>
-
-  <TabItem label="Applications">
-    ### Practical Implications
-    
-    **Cellular Biology**:
-    - Understanding cytoskeletal organization mechanisms
-    - Insights into intracellular transport efficiency
-    - Potential roles in cell division and migration
-    
-    **Biotechnology Applications**:
-    - Design of biomolecular motor-powered devices
-    - Development of more sophisticated biosensors
-    - Engineering of artificial cellular transport systems
-    
-    **Future Research**:
-    - Investigation of spiral patterns in living cells
-    - Development of therapeutic targets for motor protein diseases
-    - Creation of bio-inspired nanotechnology devices
-  </TabItem>
-</Tabs>
-
-## Research Impact
-
-<InArticleAd />
-
-
-<CardGrid>
-  <Card title="Scientific Contribution">
-    **Advancing Knowledge**
-    
-    - First comprehensive study of kinesin-induced spiral motion
-    - Novel insights into motor-filament collective behavior
-    - Breakthrough in understanding 3D cytoskeletal dynamics
-  </Card>
-  
-  <Card title="Technical Innovation">
-    **Methodological Advances**
-    
-    - New quantitative methods for analyzing complex trajectories
-    - Improved experimental protocols for motor protein studies
-    - Enhanced computational modeling approaches
-  </Card>
-  
-  <Card title="Clinical Relevance">
-    **Medical Implications**
-    
-    - Potential insights into neurodegenerative diseases
-    - Understanding of cellular transport dysfunction
-    - Foundation for therapeutic development
-  </Card>
-  
-  <Card title="Technology Development">
-    **Engineering Applications**
-    
-    - Bio-inspired robotics and automation
-    - Advanced biosensor design principles
-    - Novel nanotechnology applications
-  </Card>
-</CardGrid>
-
-## Detailed Analysis
-
-<InArticleAd />
-
-
-### Spiral Motion Characteristics
-
-The research reveals that microtubules exhibit distinct spiral trajectories when driven by kinesin motors under specific conditions. These patterns are characterized by:
-
-- **Pitch Variation**: Regular spacing between spiral coils that depends on motor density
-- **Radius Control**: Spiral radius that can be modulated by experimental parameters
-- **Handedness**: Consistent chirality in the spiral patterns observed
-- **Stability**: Persistent spiral motion over extended time periods
-
-### Motor Density Dependencies
-
-<Steps>
-
-1. **Low Density Regime**
-   
-   At low motor densities, microtubules exhibit predominantly linear motion with occasional directional changes.
-
-2. **Critical Density**
-   
-   A critical motor density threshold exists beyond which spiral motion becomes dominant over linear gliding.
-
-3. **High Density Regime**
-   
-   At high motor densities, tight spiral patterns emerge with consistent geometric parameters.
-
-4. **Saturation Effects**
-   
-   Beyond optimal density, motor interference reduces spiral regularity and motion efficiency.
-
-</Steps>
-
-### Cellular Context
-
-The spiralling behavior observed in vitro may reflect important biological functions:
-
-- **Cytoplasmic Mixing**: Spiral trajectories could enhance mixing of cellular contents
-- **Organelle Positioning**: Complex paths may facilitate optimal organelle distribution
-- **Cell Division**: Spiral patterns might contribute to spindle organization
-- **Transport Efficiency**: Three-dimensional paths could optimize cargo delivery
-
-## Future Directions
-
-<InArticleAd />
-
-
-This groundbreaking research opens several exciting avenues for future investigation:
-
-### Immediate Research Opportunities
-- Investigation of spiral patterns with different motor protein types
-- Studies of spiral motion in crowded cellular environments
-- Analysis of spiral patterns in living cells using advanced microscopy
-
-### Long-term Applications
-- Development of spiral motion-based biosensors
-- Creation of bio-inspired transport systems
-- Therapeutic targeting of motor protein spiral dynamics
-
-### Technological Innovations
-- Micro-robotics inspired by spiral motion principles
-- Advanced drug delivery systems using controlled spiral patterns
-- Next-generation molecular machines with enhanced capabilities
-
-## Further Reading
-
-<InArticleAd />
-
-
-For comprehensive details on experimental procedures, mathematical modeling, and complete results, readers are encouraged to access the full publication:
-
-**Access the Full Paper**: [Scientific Reports - Active spiralling of microtubules driven by kinesin motors](https://doi.org/10.1038/s41598-025-03384-y)
-
-This research represents a significant advance in our understanding of molecular motor behavior and opens new possibilities for both fundamental research and practical applications in biotechnology and medicine.
-
-
-
-<InArticleAd />
-<BiomolecularMachinesComments />
-<TawkWidget />
-<Copyright />
+- Journal article: [doi.org/10.1038/s41598-025-03384-y](https://doi.org/10.1038/s41598-025-03384-y), Scientific Reports, 2025. [Read it at the journal](https://www.nature.com/articles/s41598-025-03384-y), open access.
+- Authors: Douglas Kagoiya Ng'ang'a, Samuel Macharia Kang'iri, Henry Hess, Takahiro Nitta.

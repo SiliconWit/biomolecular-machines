@@ -1,0 +1,49 @@
+---
+title: "Modelling and Simulation of Biosensors Driven by Myosin Motors"
+description: "A thesis that uses 3D Brownian dynamics and a 1D analytical model to show how defective myosin motors stop actin shuttles in biosensors, and how an external force field can make the shuttles less floppy."
+contributors: "sam-macharia"
+pubDate: 2026-11-25
+tags: ["myosin", "actin", "biosensors", "brownian-dynamics", "defective-motors", "molecular-shuttles"]
+excerpt: "Actin shuttles glide continuously only over a narrow range of high active myosin fractions, and an external force field can restrain their wiggle to improve delivery."
+citation:
+  journal: "Zenodo"
+  year: 2022
+  doi: "10.5281/ZENODO.5745872"
+  authors: ["Samuel Macharia Kang'iri"]
+---
+
+Engineers want tiny devices, such as biosensors and biocomputers, that move material fast at the micro and nano scale. Building artificial motors that small is still very hard. Nature already has them. Myosin motors slide along actin filaments to drive muscle, they are small and fast, and they run on ATP, turning its chemical energy directly into motion. Extracted from an animal and fixed to a surface, they can push actin filaments that act as shuttles for an analyte.
+
+Two problems stand in the way. First, when the motors are fixed to the surface, some become defective. They bind to the actin filament, stay stuck and hold it back. Second, actin filaments are very flexible. They wiggle as they move, and that lowers the efficiency of delivering the analyte to the right place. The first problem is hard to study in the laboratory, because results are hard to reproduce and the needed resolution in space and time is hard to reach.
+
+## What we did
+
+We used computer simulation, where every parameter can be set and every run can be repeated. Our 3D Brownian dynamics simulation modelled the actin filament as a chain of rigid rods joined by beads, able to bend at the beads, with the mechanical properties of actin. Each myosin motor was a linear spring with a fixed stiffness. Motors were placed at random, evenly over the surface.
+
+Active and defective motors followed different rules. An active motor went through a four-step cycle: bind to actin, make a power stroke that pushes the filament, bind ATP, and split ATP into ADP and phosphate. A defective motor binds to the filament and stays stuck. It lets go only when the force on it exceeds a set detachment force, taken from experiments. We ran simulations with active motor fractions from 10% to 100%.
+
+To check the 3D results, we built a separate 1D analytical model. In it, a defective motor stays bound, stretches as the filament moves, and snaps off when the detachment force is reached.
+
+For the second problem, we added an external force field to the same equations and applied it to the filament.
+
+## What we found
+
+- Filament motion in the presence of defective motors falls into three stages. In the first, the filament is stuck. In the second, it wiggles and moves in curves. In the third, it glides continuously.
+- Only the continuous gliding stage is useful for micro and nano devices. Reaching it needs a high fraction of active myosin.
+- The 1D analytical model agreed: filament motion started when defective motors were reduced to around 20%. The difference from the 3D stage boundaries may come from the 1D model leaving out thermal fluctuations and other factors.
+- Both models showed that the range in which actin glides continuously over myosin is small.
+- Applying an external force field restrained the flexibility of the actin filament and so improved the efficiency of analyte delivery.
+
+## Why it matters
+
+For a biosensor designer, the first result is a materials rule: the surface must be chosen to help active myosin stick and stay active, because the device works only in a narrow window of high active fraction. The second result offers a way to make floppy actin shuttles deliver more reliably. Simulation results like these can guide an experiment before it is run, which saves preparation time and builds intuition about what to expect. The thesis also points to uses in highly targeted drug delivery.
+
+## Limits
+
+This summary is written from the thesis abstract, and it does not give the exact active fractions at the boundaries between the three stages. Motors were placed evenly over the surface, while real surfaces may differ. The 1D model leaves out thermal fluctuations. All results are from simulation and analysis, not new experiments.
+
+## Read the paper
+
+- Thesis: [doi.org/10.5281/ZENODO.5745872](https://doi.org/10.5281/ZENODO.5745872), deposited on Zenodo, 2022.
+- Related journal articles: [effects of defective motors on biosensors](/research/biomolecular-machines/effects-defective-motors-biosensors/) and [motility resilience against defective motors](/research/biomolecular-machines/motility-resilience-molecular-shuttles/).
+- Authors: Samuel Macharia Kang'iri.

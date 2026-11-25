@@ -1,0 +1,50 @@
+---
+title: "Computational Investigation of How Spatial Myosin Motor Clustering Regulates Actin Filament Mechanics and Motor Engagement"
+description: "Myosin motors on a surface are rarely spread evenly. With the motor count held fixed, how they cluster changes how stiff a gliding actin filament appears and how much its motor binding fluctuates, through two separate routes."
+contributors: "morris-wachira,douglas-nganga,takahiro-nitta,sam-macharia"
+pubDate: 2026-11-25
+tags: ["actomyosin", "in-vitro-motility-assay", "brownian-dynamics", "molecular-motors", "persistence-length"]
+excerpt: "Larger motor clusters make a gliding actin filament behave stiffer, while denser and larger clusters make motor binding more erratic. A single clustering index does not capture both."
+citation:
+  journal: "Journal of Applied Science, Engineering and Technology for Development"
+  year: 2026
+  volume: 6
+  issue: 1
+  doi: "10.33803/6gsbjh.2"
+  authors: ["Morris Muriithi Wachira", "Douglas Kagoiya Ng'ang'a", "Takahiro Nitta", "Samuel Macharia Kang'iri"]
+---
+
+Scientists who build devices powered by molecular motors, such as biosensors that carry their cargo on actin filaments, depend on models to predict how the filaments will move. Almost every model of the standard gliding assay assumes that myosin motors are spread evenly over the surface. Real surfaces are not like that. Surface chemistry, roughness and buffer conditions make motors stick in clusters, and inside cells myosin also gathers in clusters, foci and patches.
+
+If the model assumes an even surface and the real surface has clusters, the predictions of filament shape and motor binding may be wrong. How much clustering matters, and which feature of it matters, was not known.
+
+## What we did
+
+We built a two-dimensional Brownian dynamics model of an actin filament gliding over a patterned field of myosin motors. The filament was a semi-flexible chain 3 µm long, made of 12 segments. Each motor followed a three-state mechanochemical cycle.
+
+We varied three features of the motor pattern: cluster density (the motor density inside each cluster), cluster radius, and clustering fraction (the share of background motors chosen as cluster centres). We used a full 3 by 3 by 3 factorial design and held the total number of motors constant, so that only the arrangement changed. To compare different geometries on one scale, we also combined the three features into a single clustering index.
+
+We measured two responses. Filament mechanics was measured by the persistence length of the filament contour, a measure of how stiff it appears. Motor engagement was measured by the coefficient of variation of the number of bound motors, a measure of how much that number fluctuates.
+
+## What we found
+
+- Persistence length rose mainly with cluster radius. Raising the radius from 0.5 to 1.5 µm raised it from about 12.0 to 15.3 µm, an increase of about 20 to 25%.
+- Cluster density also raised it, with most of the change between 100 and 300 motors per square micrometre.
+- Clustering fraction mattered only through its interaction with density. At the lowest density, more clustering lowered persistence length from about 13.3 to 11.9 µm. At higher densities it raised it slightly.
+- Bound-motor fluctuations behaved differently. They rose strongly with both cluster density and cluster radius. At intermediate density, the coefficient of variation rose from 1.38 to 2.62 as clustering fraction increased. At the lowest density it stayed close to 1, and at the highest it stayed near 2.8.
+- The clustering index tracked the overall rise in both responses. Mean persistence length went from about 11.6 µm at low index to about 15 to 16 µm at high index.
+- Geometries with similar index values still gave measurably different results. At intermediate index, persistence length ranged from about 10.3 to 15.7 µm. One number does not describe the pattern fully.
+
+## Why it matters
+
+Motor arrangement acts on filament transport through two separate routes. A mechanical route is set by the length over which motors engage the filament. A kinetic route is set by how motors bind and release. A device designer can therefore treat motor patterning as a design variable, choosing cluster size and density for the behaviour they need. Modellers should represent motor geometry explicitly, not assume an even surface or use a single summary number.
+
+## Limits
+
+The model is two-dimensional, with a fixed filament length, a fixed baseline motor density and fixed motor kinetics. Three-dimensional filament motion, remodelling of the network and variation in motor kinetics were not included. The results come from simulation and have not yet been compared with experiments on patterned surfaces.
+
+## Read the paper
+
+- Journal article: [doi.org/10.33803/6gsbjh.2](https://doi.org/10.33803/6gsbjh.2), Journal of Applied Science, Engineering and Technology for Development, volume 6, issue 1, 2026. [Download the PDF](https://jasetd.dkut.ac.ke/2026/6gsbjh/6gsbjh.pdf) from the journal, free to read.
+- Conference proceeding manuscript: [doi.org/10.33803/6gsbjh](https://doi.org/10.33803/6gsbjh), 10th DeKUT International Conference on Science, Technology, Innovation and Entrepreneurship, 2026.
+- Authors: Morris Muriithi Wachira, Douglas Kagoiya Ng'ang'a, Takahiro Nitta, Samuel Macharia Kang'iri.
